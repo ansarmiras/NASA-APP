@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1"><b>&lt;!DOCTYPE html&gt;</b></p>
+<p class="p1"><b>&lt;html lang="en"&gt;</b></p>
+<p class="p1"><b>&lt;head&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;title&gt;Ideal MISAR Orbital Recycling Simulator&lt;/title&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;style&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>body {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: #0b0f19; /* Deep Space Blue/Black */</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>color: #e2e8f0;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>line-height: 1.6;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>overflow-x: hidden;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.card {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: #1a202c;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border: 1px solid #2d3748;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transition: transform 0.3s, box-shadow 0.3s;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.card:hover {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transform: translateY(-2px);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px rgba(34, 197, 94, 0.15);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.header-gradient {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #34d399 0%, #a7f3d0 100%);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.input-range::-webkit-slider-thumb {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>-webkit-appearance: none;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>appearance: none;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>width: 16px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 16px;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 50%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background: #34d399;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>cursor: pointer;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>box-shadow: 0 0 5px rgba(52, 211, 153, 0.8);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.comparison-bar-bg {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: #4a5568;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 1.5rem;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>overflow: hidden;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bar-misar {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: #34d399; /* Green - Low Cost/Energy */</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transition: width 1.5s ease-out;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bar-launch {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>background-color: #f56565; /* Red - High Cost */</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transition: width 1.5s ease-out;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>.bar-terrestrial {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">             </span>background-color: #6366f1; /* Purple - Middle Energy */</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>transition: width 1.5s ease-out;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>height: 100%;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/style&gt;</b></p>
+<p class="p1"><b>&lt;/head&gt;</b></p>
+<p class="p1"><b>&lt;body class="p-4 md:p-12 min-h-screen flex items-center justify-center"&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;div class="w-full max-w-7xl"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;header class="text-center mb-12"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;h1 class="text-6xl font-extrabold header-gradient tracking-tight"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>MISAR: The Orbital Resource Advantage</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/h1&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;p class="text-xl mt-3 text-gray-400"&gt;Modeling Energy and Economics of In-Space Aluminum Recycling&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/header&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;main class="grid grid-cols-1 lg:grid-cols-3 gap-10"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;!-- Input Panel (Column 1) --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-1 card p-8 rounded-2xl shadow-2xl space-y-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-bold text-green-400 border-b border-gray-700 pb-4"&gt;Process Inputs&lt;/h2&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Feedstock Mass --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label for="massInput" class="block text-base font-medium mb-2 text-gray-300"&gt;Debris Mass ($\mathbf{M}$): &lt;span id="massValue" class="font-bold text-2xl text-teal-300"&gt;100&lt;/span&gt; kg&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="range" id="massInput" min="10" max="500" value="100" step="10"</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                           </span>class="input-range w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Thermal Efficiency --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label for="efficiencyInput" class="block text-base font-medium mb-2 text-gray-300"&gt;System Thermal Efficiency ($\mathbf{\eta_{therm}}$): &lt;span id="efficiencyValue" class="font-bold text-2xl text-teal-300"&gt;50&lt;/span&gt; %&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="range" id="efficiencyInput" min="10" max="90" value="50" step="5"</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                           </span>class="input-range w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Solar Array Area --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;label for="areaInput" class="block text-base font-medium mb-2 text-gray-300"&gt;Solar Collector Area ($\mathbf{A}$): &lt;span id="areaValue" class="font-bold text-2xl text-teal-300"&gt;50&lt;/span&gt; $\mathbf{m^2}$&lt;/label&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;input type="range" id="areaInput" min="10" max="200" value="50" step="10"</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                           </span>class="input-range w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;!-- Output and Visualization Panel (Columns 2 &amp; 3) --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-2 card p-8 rounded-2xl shadow-2xl space-y-8"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-bold text-yellow-400 border-b border-gray-700 pb-4"&gt;Operational Results&lt;/h2&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Key Metrics --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-gray-800 rounded-xl"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;Total Energy Needed&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p id="totalEnergyOutput" class="text-3xl font-extrabold text-teal-300 mt-1"&gt;0.0 kWh&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-gray-800 rounded-xl"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;Time to Process Batch&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p id="processTimeOutput" class="text-3xl font-extrabold text-teal-300 mt-1"&gt;0.0 hr&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-gray-800 rounded-xl"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400"&gt;Energy per $\mathbf{1 \text{ kg}}$&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p id="energyPerKgOutput" class="text-3xl font-extrabold text-teal-300 mt-1"&gt;0.0 kWh/kg&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Energy Comparison Chart --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-blue-400 mb-4 pt-4 border-t border-gray-700"&gt;1. Energy Efficiency Comparison ($\mathbf{\text{kWh/kg}}$)&lt;/h3&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="space-y-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;!-- MISAR --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-green-300 flex justify-between mb-1"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>MISAR (Orbital Solar Thermal)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;span id="misarEnergyBarText" class="font-bold"&gt;0.0 kWh/kg&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="comparison-bar-bg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;div id="misarEnergyBar" class="bar-misar" style="width: 1%;"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;!-- Terrestrial Secondary --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-indigo-400 flex justify-between mb-1"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>Terrestrial Secondary Recycling (Electrical Input)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;span id="terrestrialEnergyBarText" class="font-bold"&gt;2.78 kWh/kg&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="comparison-bar-bg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;div id="terrestrialEnergyBar" class="bar-terrestrial" style="width: 50%;"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;!-- Cost Comparison Chart --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;h3 class="text-xl font-semibold text-yellow-400 mb-4 pt-4 border-t border-gray-700"&gt;2. Economic Advantage Comparison ($\mathbf{\text{Cost/kg}}$ to LEO)&lt;/h3&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="space-y-4"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;!-- MISAR Cost --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-green-300 flex justify-between mb-1"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>MISAR Cost (Orbital Processing):</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;span class="font-bold"&gt;$0.00 / kg&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="comparison-bar-bg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;div id="recyclingCostBar" class="bar-misar" style="width: 1%;"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;!-- Launch Cost --&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-red-400 flex justify-between mb-1"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>Earth Launch Cost (Benchmark):</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;span class="font-bold"&gt;$1,500.00 / kg&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;div class="comparison-bar-bg"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                                </span>&lt;div id="launchCostBar" class="bar-launch" style="width: 100%;"&gt;&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;div class="mt-8 p-4 bg-green-900/30 rounded-xl border border-green-700/50 text-center"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p class="text-2xl font-extrabold text-green-300 tracking-wider"&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                            </span>COST DIFFERENTIAL: &lt;span id="costFactorOutput" class="text-4xl text-yellow-300 ml-3"&gt;Orders of Magnitude Less&lt;/span&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-400 mt-1"&gt;The energy cost to process 1 kg in orbit is effectively zero compared to the transportation cost of launching 1 kg from Earth.&lt;/p&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                    </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>&lt;/div&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>&lt;/main&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;script&gt;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// --- Simulation Constants (Physical &amp; Economic Benchmarks) ---</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const C_P = 900;<span class="Apple-converted-space">          </span>// Specific heat of Aluminum (J/kg*K)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const L_F = 395000; <span class="Apple-converted-space">      </span>// Latent heat of fusion (J/kg)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const T_INITIAL = 293.15; // Initial temp (20°C in K)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const T_MELT = 933.15;<span class="Apple-converted-space">    </span>// Melt temp (660°C in K)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const SOLAR_IRRADIANCE = 1361; // Solar Irradiance in LEO (W/m^2)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const J_TO_KWH = 3.6 * 10**6; // Conversion factor: Joules to kWh</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Benchmarks for Visualization</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const BENCHMARK_LAUNCH_COST = 1500; // $/kg (Conservative LEO launch cost)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const BENCHMARK_TERRESTRIAL_ENERGY_KWH = 2.78; // kWh/kg (Terrestrial secondary recycling, using 10 MJ/kg)</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// --- DOM Elements ---</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const massInput = document.getElementById('massInput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const efficiencyInput = document.getElementById('efficiencyInput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const areaInput = document.getElementById('areaInput');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const massValue = document.getElementById('massValue');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const efficiencyValue = document.getElementById('efficiencyValue');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const areaValue = document.getElementById('areaValue');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const totalEnergyOutput = document.getElementById('totalEnergyOutput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const processTimeOutput = document.getElementById('processTimeOutput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const energyPerKgOutput = document.getElementById('energyPerKgOutput');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const costFactorOutput = document.getElementById('costFactorOutput');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const misarEnergyBar = document.getElementById('misarEnergyBar');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const terrestrialEnergyBar = document.getElementById('terrestrialEnergyBar');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const misarEnergyBarText = document.getElementById('misarEnergyBarText');</b></p>
+<p class="p2"><b><span class="Apple-converted-space">        </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const recyclingCostBar = document.getElementById('recyclingCostBar');</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>const launchCostBar = document.getElementById('launchCostBar');</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>function calculateMISARMetrics() {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 1. Get current parameters</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const M = parseFloat(massInput.value); // Mass in kg</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const eta_therm = parseFloat(efficiencyInput.value) / 100; // Efficiency (0.1 to 0.9)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const A = parseFloat(areaInput.value); // Area in m^2</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Update UI slider values</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>massValue.textContent = M.toFixed(0);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>efficiencyValue.textContent = (eta_therm * 100).toFixed(0);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>areaValue.textContent = A.toFixed(0);</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 2. Calculate Theoretical Energy (in Joules)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Q_sensible = M * c_p * delta_T</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const Q_sensible = M * C_P * (T_MELT - T_INITIAL);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Q_latent = M * L_f</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const Q_latent = M * L_F;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const Q_theoretical = Q_sensible + Q_latent; // Total Joules needed</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 3. Calculate Actual Energy Input (accounting for losses)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const E_process_Joules = Q_theoretical / eta_therm;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const E_process_kWh = E_process_Joules / J_TO_KWH; // Total kWh</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 4. Calculate Energy per Kilogram (The core MISAR efficiency metric)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const E_misar_per_kg_kWh = E_process_kWh / M;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 5. Calculate Processing Time</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Power absorbed: P_solar = I_solar * A * eta_therm (Watts)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const P_solar_Watts = SOLAR_IRRADIANCE * A * eta_therm;<span class="Apple-converted-space"> </span></b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Time = Energy / Power (seconds)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const T_seconds = E_process_Joules / P_solar_Watts;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const T_hours = T_seconds / 3600;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 6. Update Output Display</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>totalEnergyOutput.textContent = `${E_process_kWh.toFixed(2)} kWh`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>processTimeOutput.textContent = `${T_hours.toFixed(2)} hr`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>energyPerKgOutput.textContent = `${E_misar_per_kg_kWh.toFixed(2)} kWh/kg`;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// 7. Visualization Updates</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// A. Energy Bar Comparison (MISAR vs Terrestrial Secondary Recycling)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const misarEnergyRatio = E_misar_per_kg_kWh / BENCHMARK_TERRESTRIAL_ENERGY_KWH;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Normalize bars based on the highest energy value (Terrestrial in this case)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const misarBarWidth = Math.max(1, misarEnergyRatio * 100);<span class="Apple-converted-space"> </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const terrestrialBarWidth = 100;</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>misarEnergyBar.style.width = `${misarBarWidth.toFixed(0)}%`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>terrestrialEnergyBar.style.width = `${terrestrialBarWidth.toFixed(0)}%`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>misarEnergyBarText.textContent = `${E_misar_per_kg_kWh.toFixed(2)} kWh/kg`;</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// B. Cost Bar Comparison (MISAR vs Launch)</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// MISAR Cost per kg = $0.00</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>const misarCostPerKg = 0.00;<span class="Apple-converted-space"> </span></b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// Bar widths: Launch is 100%, MISAR is min 1% to be visible</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>launchCostBar.style.width = '100%';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>recyclingCostBar.style.width = '1%';</b></p>
+<p class="p2"><b><span class="Apple-converted-space">            </span></b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>// C. Cost Differential Factor</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>if (misarCostPerKg === 0) {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>costFactorOutput.textContent = 'Orders of Magnitude Less';</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>} else {</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>const costFactor = BENCHMARK_LAUNCH_COST / misarCostPerKg;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">                </span>costFactorOutput.textContent = `${costFactor.toFixed(0)}X CHEAPER`;</b></p>
+<p class="p1"><b><span class="Apple-converted-space">            </span>}</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>}</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Event Listeners</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>massInput.addEventListener('input', calculateMISARMetrics);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>efficiencyInput.addEventListener('input', calculateMISARMetrics);</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>areaInput.addEventListener('input', calculateMISARMetrics);</b></p>
+<p class="p2"><b></b><br></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>// Initial run</b></p>
+<p class="p1"><b><span class="Apple-converted-space">        </span>calculateMISARMetrics();</b></p>
+<p class="p1"><b><span class="Apple-converted-space">    </span>&lt;/script&gt;</b></p>
+<p class="p1"><b>&lt;/body&gt;</b></p>
+<p class="p1"><b>&lt;/html&gt;</b></p>
+</body>
+</html>
